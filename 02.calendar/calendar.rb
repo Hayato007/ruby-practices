@@ -35,8 +35,21 @@ last_day = Date.new(year, month, -1).day
 puts "#{Date::MONTHNAMES[month]}, #{year}".center(20)
 puts "Su Mo Tu We Th Fr Sa"
 
-(1..last_day).each do |day|
-  print day.to_s.rjust(2) + " "
+start_date = Date.new(2023, 1, 1)
+end_date = Date.new(2023, 1, 31)
+
+week1=0
+
+(start_date..end_date).each do |day|
+
+if week1 == 0
+    (date.wday).times do |day2|
+        printf("%3s", "")
+    end
+    week1 = 1
+end
+
+  print day.day.to_s.rjust(2) + " "
 
   if date.wday == 6 || day == last_day
     print "\n" if day != last_day
