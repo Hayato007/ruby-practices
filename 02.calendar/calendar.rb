@@ -42,12 +42,12 @@ week1=0
 
 (start_date..end_date).each do |current_date|
 
-if week1 == 0
+  if week1 == 0
     (date.wday).times do |day2|
-        printf("%3s", "")
-end
-   week1 = 1
-end
+          printf("%3s", "")
+  end
+    week1 = 1
+  end
 
   print current_date.day.to_s.rjust(2) + " "
 
