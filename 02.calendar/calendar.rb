@@ -40,19 +40,19 @@ end_date = Date.new(2023, 1, 31)
 
 week1=0
 
-(start_date..end_date).each do |day|
+(start_date..end_date).each do |current_date|
 
 if week1 == 0
     (date.wday).times do |day2|
         printf("%3s", "")
-    end
-    week1 = 1
+end
+   week1 = 1
 end
 
-  print day.day.to_s.rjust(2) + " "
+  print current_date.day.to_s.rjust(2) + " "
 
-  if date.wday == 6 || day == last_day
-    print "\n" if day != last_day
+  if date.wday == 6 || current_date == last_day
+    print "\n" if current_date != last_day
     date += (7 - date.wday) % 7
   else
     date += 1
