@@ -38,16 +38,9 @@ puts "Su Mo Tu We Th Fr Sa"
 start_date = Date.new(2023, 1, 1)
 end_date = Date.new(2023, 1, 31)
 
-week1=0
+date.wday.times { printf "%3s", "" }
 
 (start_date..end_date).each do |current_date|
-
-  if week1 == 0
-    (date.wday).times do |day2|
-          printf("%3s", "")
-  end
-    week1 = 1
-  end
 
   print current_date.day.to_s.rjust(2) + " "
 
