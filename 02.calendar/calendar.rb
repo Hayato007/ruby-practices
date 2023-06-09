@@ -23,13 +23,15 @@ today = Date.today
 year = options[:year] || today.year
 month = options[:month] || today.month
 
-begin
-  date = Date.new(year, month, 1)
-rescue ArgumentError
-  puts "Error: Invalid year or month specified."
+puts  Date.valid_date?(year, month, 1)
+
+if Date.valid_date?(year, month, 1)
+  else
+    puts "Error: Invalid year or month specified."
   exit
 end
 
+date = Date.new(year, month, 1)
 last_day = Date.new(year, month, -1).day
 
 puts "#{Date::MONTHNAMES[month]}, #{year}".center(20)
