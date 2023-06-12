@@ -27,7 +27,7 @@ puts  Date.valid_date?(year, month, 1)
 
 if Date.valid_date?(year, month, 1)
   else
-    puts "Error: Invalid year or month specified."
+  puts "Error: Invalid year or month specified."
   exit
 end
 
@@ -37,8 +37,8 @@ last_day = Date.new(year, month, -1).day
 puts "#{Date::MONTHNAMES[month]}, #{year}".center(20)
 puts "Su Mo Tu We Th Fr Sa"
 
-start_date = Date.new(2023, 1, 1)
-end_date = Date.new(2023, 1, 31)
+start_date = Date.new(year, month, 1)
+end_date = Date.new(year, month, -1)
 
 date.wday.times { printf "%3s", "" }
 
