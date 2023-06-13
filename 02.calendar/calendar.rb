@@ -40,14 +40,10 @@ end_date = Date.new(year, month, -1)
 
 date.wday.times { printf "%3s", "" }
 
-(start_date..end_date).each do |current_date|
+(Date.new(year, month, 1)..Date.new(year, month, -1)).each do |date|
+  print date.day.to_s.rjust(2) + " "
 
-  print current_date.day.to_s.rjust(2) + " "
-
-  if date.wday == 6 || current_date == last_day
-    print "\n" if current_date != last_day
-    date += (7 - date.wday) % 7
-  else
-    date += 1
+  if date.wday == 6 || date == end_date
+    print "\n" if date != end_date
   end
 end
