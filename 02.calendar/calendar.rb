@@ -44,6 +44,6 @@ date.wday.times { printf "%3s", "" }
   print date.day.to_s.rjust(2) + " "
 
   if date.wday == 6 || date == end_date
-    print "\n" if date != end_date
+    puts
   end
 end
