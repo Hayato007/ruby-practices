@@ -3,7 +3,7 @@ require 'date'
 
 options = {}
 OptionParser.new do |opts|
-  opts.banner = "Usage: cal.rb [options]"
+  opts.banner = "Usage: calendar.rb [options]"
 
   opts.on("-m", "--month MONTH", Integer, "Specify month (1-12)") do |month|
     options[:month] = month
