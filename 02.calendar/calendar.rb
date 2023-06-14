@@ -29,16 +29,13 @@ else
   exit
 end
 
-date = Date.new(year, month, 1)
-last_day = Date.new(year, month, -1).day
-
 puts "#{Date::MONTHNAMES[month]}, #{year}".center(20)
 puts "Su Mo Tu We Th Fr Sa"
 
 start_date = Date.new(year, month, 1)
 end_date = Date.new(year, month, -1)
 
-date.wday.times { printf "%3s", "" }
+start_date.wday.times { printf "%3s", "" }
 
 (Date.new(year, month, 1)..Date.new(year, month, -1)).each do |date|
   print date.day.to_s.rjust(2) + " "
