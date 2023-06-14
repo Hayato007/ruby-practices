@@ -23,8 +23,7 @@ today = Date.today
 year = options[:year] || today.year
 month = options[:month] || today.month
 
-if Date.valid_date?(year, month, 1)
-else
+unless Date.valid_date?(year, month, 1)
   puts "Error: Invalid year or month specified."
   exit
 end
