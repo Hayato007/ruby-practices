@@ -12,7 +12,7 @@ OptionParser.new do |opts|
   opts.on("-y", "--year YEAR", Integer, "Specify year (1970-2100)") do |year|
     options[:year] = year
   end
-end.parse!
+end.parse
 
 if options[:year] && !options[:month]
   puts "Error: Month is required when specifying a year."
