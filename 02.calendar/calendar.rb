@@ -36,7 +36,7 @@ end_date = Date.new(year, month, -1)
 
 start_date.wday.times { printf "%3s", "" }
 
-(Date.new(year, month, 1)..Date.new(year, month, -1)).each do |date|
+(start_date..end_date).each do |date|
   print date.day.to_s.rjust(2) + " "
 
   if date.wday == 6 || date == end_date
