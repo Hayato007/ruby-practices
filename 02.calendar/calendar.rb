@@ -1,18 +1,14 @@
 require 'optparse'
 require 'date'
 
+opt = OptionParser.new
+
 options = {}
-OptionParser.new do |opts|
-  opts.banner = "Usage: calendar.rb [options]"
 
-  opts.on("-m", "--month MONTH", Integer, "Specify month (1-12)") do |month|
-    options[:month] = month
-  end
+opt.on('-m VAL') {|v| options[:month] = v.to_i }
+opt.on('-y VAL') {|v| options[:year] = v.to_i }
 
-  opts.on("-y", "--year YEAR", Integer, "Specify year (1970-2100)") do |year|
-    options[:year] = year
-  end
-end.parse
+opt.parse(ARGV)
 
 if options[:year] && !options[:month]
   puts "Error: Month is required when specifying a year."
