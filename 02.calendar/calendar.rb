@@ -10,11 +10,6 @@ opt.on('-y VAL') {|v| options[:year] = v.to_i }
 
 opt.parse(ARGV)
 
-if options[:year] && !options[:month]
-  puts "Error: Month is required when specifying a year."
-  exit
-end
-
 today = Date.today
 year = options[:year] || today.year
 month = options[:month] || today.month
