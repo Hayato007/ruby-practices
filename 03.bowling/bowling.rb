@@ -27,7 +27,7 @@ point = 0 # 合計点を格納する変数
   point += frame.sum # 現在のフレームのスコアを合計点に加算
 
   if frame[0] == 10 # ストライクの場合
-    point += (left_shots.slice(0, 2) || []).sum # 次の2投のスコアを加算
+    point += (left_shots.slice(0, 2)).sum # 次の2投のスコアを加算
   elsif frame.sum == 10 # スペアの場合
     point += (next_frame[0] || 0) # 次の1投のスコアを加算
   end
