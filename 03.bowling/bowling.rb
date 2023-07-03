@@ -1,9 +1,7 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-score = ARGV[0] # コマンドライン引数からスコアを取得
-scores = score.split(',') # スコアをカンマで分割して配列に格納
-shots = scores.map { |s| s == 'X' ? 10 : s.to_i } # スコアを整数値に変換して新しい配列を作成
+shots = ARGV[0].split(',').map { |s| s == 'X' ? 10 : s.to_i }
 
 frames = [] # フレームごとのスコアを格納する配列
 frame = [] # 現在のフレームのスコアを一時的に格納する配列
