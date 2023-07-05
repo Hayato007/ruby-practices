@@ -5,6 +5,7 @@ shots = ARGV[0].split(',').map { |s| s == 'X' ? 10 : s.to_i }
 
 frames = [] # フレームごとのスコアを格納する配列
 frame = [] # 現在のフレームのスコアを一時的に格納する配列
+
 shots.each do |s|
   frame << s # スコアを現在のフレームに追加
   if frames.length < 10 # 最後のフレーム以外の場合の処理
@@ -17,7 +18,6 @@ shots.each do |s|
   end
 end
 
-point = 0
 point1 = 0
 
 point = 10.times do |n|
@@ -35,6 +35,4 @@ point = 10.times do |n|
   end
 end
 
-puts point  # 合計点を表示
 puts point1  # 合計点を表示
-
