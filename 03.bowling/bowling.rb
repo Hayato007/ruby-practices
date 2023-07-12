@@ -19,14 +19,14 @@ shots.each do |s|
   end
 end
 
-point = 0
+point
 
 point = 10.times.sum do |n|
-  frame = frames[n] 
+  frame = frames[n]
   if frame.sum < 10
     frame.sum
   elsif frame[0] == 10 # ストライクの場合
-    if n ==9
+    if n == 9
       frame.sum
     elsif n == 8
       frame.sum + frames[n + 1][0] + frames[n + 1][1]
