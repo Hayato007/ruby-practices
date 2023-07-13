@@ -19,8 +19,6 @@ shots.each do |s|
   end
 end
 
-point
-
 point = 10.times.sum do |n|
   frame = frames[n]
   if frame.sum < 10
