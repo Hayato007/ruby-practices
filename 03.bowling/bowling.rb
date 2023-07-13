@@ -21,23 +21,25 @@ end
 
 point = 10.times.sum do |n|
   frame = frames[n]
-  if frame.sum < 10
-    frame.sum
+  sum = frame.sum # フレームの合計点を共通化
+
+  if sum < 10
+    sum
   elsif frame[0] == 10 # ストライクの場合
     if n == 9
-      frame.sum
+      sum
     elsif n == 8
-      frame.sum + frames[n + 1][0] + frames[n + 1][1]
+      sum + frames[n + 1][0] + frames[n + 1][1]
     elsif frames[n + 1][0] != 10
-      frame.sum + frames[n + 1].sum
+      sum + frames[n + 1].sum
     else
-      frame.sum + frames[n + 1][0] + frames[n + 2][0]
+      sum + frames[n + 1][0] + frames[n + 2][0]
     end
-  elsif frame.sum >= 10 # スペアの場合もしくは、１０以上
+  elsif sum >= 10 # スペアの場合もしくは、１０以上
     if n < 9
-      frame.sum + frames[n + 1][0] # n=8の場合ここに入る
+      sum + frames[n + 1][0] # n=8の場合ここに入る
     else
-      frame.sum # 最終フレームの場合ここに入る
+      sum # 最終フレームの場合ここに入る
     end
   end
 end
