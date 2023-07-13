@@ -23,12 +23,10 @@ point = 10.times.sum do |n|
   frame = frames[n]
   sum = frame.sum # フレームの合計点を共通化
 
-  if sum < 10
+  if n == 9
     sum
   elsif frame[0] == 10 # ストライクの場合
-    if n == 9
-      sum
-    elsif n == 8
+    if n == 8
       sum + frames[n + 1][0] + frames[n + 1][1]
     elsif frames[n + 1][0] != 10
       sum + frames[n + 1].sum
@@ -36,11 +34,9 @@ point = 10.times.sum do |n|
       sum + frames[n + 1][0] + frames[n + 2][0]
     end
   elsif sum >= 10 # スペアの場合もしくは、１０以上
-    if n < 9
       sum + frames[n + 1][0] # n=8の場合ここに入る
     else
       sum # 最終フレームの場合ここに入る
-    end
   end
 end
 
