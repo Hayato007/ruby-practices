@@ -21,10 +21,10 @@ end
 
 point = 10.times.sum do |n|
   frame = frames[n]
-  sum = frame.sum # フレームの合計点を共通化
+  sum = frame.sum # フレームの合計点を共通化　
 
   if n == 9
-    sum
+    sum # 最終フレーム
   elsif frame[0] == 10 # ストライクの場合
     if n == 8
       sum + frames[n + 1][0] + frames[n + 1][1]
