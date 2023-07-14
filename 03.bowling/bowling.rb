@@ -34,9 +34,9 @@ point = 10.times.sum do |n|
       sum + frames[n + 1][0] + frames[n + 2][0]
     end
   elsif sum >= 10 # スペアの場合もしくは、１０以上
-      sum + frames[n + 1][0] # n=8の場合ここに入る
-    else
-      sum # 最終フレームの場合ここに入る
+    sum + frames[n + 1][0] # n=8の場合ここに入る
+  else
+    sum
   end
 end
 
