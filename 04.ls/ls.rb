@@ -1,7 +1,7 @@
 #! /usr/bin/env ruby
 # frozen_string_literal: true
 
-COLUMNS = 3
+COLUMNS = 4
 
 def files_get
   Dir.glob('*')
