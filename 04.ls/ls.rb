@@ -3,12 +3,12 @@
 
 COLUMNS = 3
 
-def files_get
+def list_filenames
   Dir.glob('*')
 end
 
 def list_files_in_columns
-  files = files_get
+  files = list_filenames
 
   rows = (files.size / COLUMNS.to_f).ceil
 
